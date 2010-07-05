@@ -1,0 +1,850 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>A request for processing - scouring; blending or &apos;cleaning&apos;?.</description>
+    <enableActivities>true</enableActivities>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Amendment_Number__c</fullName>
+        <defaultValue>1</defaultValue>
+        <description>Amendment number for request.</description>
+        <label>Amendment Number</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Amendment_Status__c</fullName>
+        <label>Amendment Status</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Andar_Wool_Opener__c</fullName>
+        <label>Andar Wool Opener</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Bale_Remarks__c</fullName>
+        <label>Bale Remarks</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Bale_Wight_Required__c</fullName>
+        <label>Bale Wight Required (kilos)</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Bales_Picked_For_Scouring__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Inidcates if bales have been picked for scouring.</description>
+        <label>Bales Picked For Scouring</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Bill_Of_Materials_Total_Weight__c</fullName>
+        <label>Bill Of Materials Total Weight</label>
+        <summarizedField>Processing_Material__c.Kilos__c</summarizedField>
+        <summaryForeignKey>Processing_Material__c.Process_Request__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Bleach__c</fullName>
+        <label>Bleach</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1/2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Blend_Type__c</fullName>
+        <label>Blend Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Blend Type A</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Blend Type B</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Blend Type C</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Cert__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Cert</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Certificate_At__c</fullName>
+        <label>Certificate At</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Certify_pH__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Certify pH</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Container_Requirements__c</fullName>
+        <label>Container Requirements</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Division__c</fullName>
+        <label>Division</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Home Scour</fullName>
+                <default>true</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Estimated_Yield__c</fullName>
+        <description>Estmated yield of blend.</description>
+        <label>Estimated Yield</label>
+        <precision>18</precision>
+        <scale>3</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Expected_Input_Weight__c</fullName>
+        <description>Expected input weight (used for initial request).</description>
+        <label>Expected Input Weight</label>
+        <precision>15</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Fearnought_Type__c</fullName>
+        <label>Fearnought Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>MEDIUM F/N</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Fearnought__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Fearnought</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>General_Time_Frame_Due__c</fullName>
+        <label>General Time Frame Due</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Included_In_Order_Book__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Inidcates if request has been included in order book.</description>
+        <label>Included In Order Book</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>LastStatus__c</fullName>
+        <label>LastStatus</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Initial Request - Submitted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Initial Request - Acknowledged</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Initial Request - Amended</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed Request - Submitted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed Request - Acknowledged</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed Request - Amended</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed Request - Scheduled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed Request - Locked</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Request Processed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Low_Fatty_Matter__c</fullName>
+        <label>Low Fatty Matter</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Morclean__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Morclean</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Moth_Proof__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Moth Proof</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Other_Treatment__c</fullName>
+        <label>Other Treatment</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Treatment 1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Treatment 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Treatment 3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>MultiselectPicklist</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Packing__c</fullName>
+        <label>Packing</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Plastic</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hessian</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Polyprop</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Paint_Treatment__c</fullName>
+        <label>Paint Treatment</label>
+        <length>100</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Pick_For__c</fullName>
+        <label>Pick For</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Picking_Note__c</fullName>
+        <label>Picking Note</label>
+        <picklist>
+            <picklistValues>
+                <fullName>WATCH FOR PAINT</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OTHER ADVICE???</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Picking_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Picking Required</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Process_Type__c</fullName>
+        <description>Type of processing requested - scouring; blending or cleaning.</description>
+        <label>Process Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Scouring</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Blending</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cleaning</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>RGC_Cert__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>RGC Cert</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>RGC__c</fullName>
+        <label>RGC</label>
+        <length>50</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Request_Date__c</fullName>
+        <defaultValue>Today()</defaultValue>
+        <description>Date processing request made.</description>
+        <label>Request Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Required_Date__c</fullName>
+        <label>Required Date</label>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Scour_Cert__c</fullName>
+        <label>Scour Cert</label>
+        <length>30</length>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Scour_To_Max__c</fullName>
+        <label>and</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Scour_To_Min__c</fullName>
+        <label>Scour To Between</label>
+        <precision>18</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Scour_To__c</fullName>
+        <label>Scour To</label>
+        <precision>2</precision>
+        <scale>0</scale>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Special_Instructions__c</fullName>
+        <label>Special Instructions</label>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <label>Status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Draft</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Initial Request - Submitted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Initial Request - Acknowledged</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Initial Request - Amended</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed Request - Submitted</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed Request - Acknowledged</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed Request - Amended</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed Request - Scheduled</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Completed Request - Locked</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Request Processed</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Step_Blender__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Step Blender</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Total_Amendments__c</fullName>
+        <description>Number of amendments requested by customer.</description>
+        <label>Total Amendments</label>
+        <precision>3</precision>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Total_Clean_Weight__c</fullName>
+        <formula>Total_Input_Weight__c  *  Estimated_Yield__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Total Clean Weight</label>
+        <precision>18</precision>
+        <scale>2</scale>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Total_Input_Weight__c</fullName>
+        <description>Total weight of all input materials.</description>
+        <label>Total Input Weight</label>
+        <summarizedField>Processing_Material__c.Kilos__c</summarizedField>
+        <summaryForeignKey>Processing_Material__c.Process_Request__c</summaryForeignKey>
+        <summaryOperation>sum</summaryOperation>
+        <type>Summary</type>
+    </fields>
+    <fields>
+        <fullName>Warehouse_Review__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates if warehouse have performed initial review of request.</description>
+        <label>Warehouse Review</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>pH__c</fullName>
+        <label>pH</label>
+        <picklist>
+            <picklistValues>
+                <fullName>ACID SIDE = pH 5.0 - 6.0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ACID SIDE = pH 6.0 - 7.0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>ACID SIDE = pH 7.0 - 8.0</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <label>Process Request</label>
+    <listViews>
+        <fullName>All</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Draft_Requests</fullName>
+        <columns>NAME</columns>
+        <columns>Blend_Type__c</columns>
+        <columns>Expected_Input_Weight__c</columns>
+        <columns>Status__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Draft</value>
+        </filters>
+        <label>Draft Requests</label>
+    </listViews>
+    <listViews>
+        <fullName>Standard_Weekly_Totals</fullName>
+        <columns>Division__c</columns>
+        <columns>Required_Date__c</columns>
+        <columns>Process_Type__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Division__c</field>
+            <operation>equals</operation>
+            <value>Home Scour</value>
+        </filters>
+        <filters>
+            <field>Request_Date__c</field>
+            <operation>equals</operation>
+            <value>LAST_N_DAYS:15</value>
+        </filters>
+        <label>Standard Weekly Totals</label>
+    </listViews>
+    <nameField>
+        <displayFormat>SW-{0000000}</displayFormat>
+        <label>Processing Lot Number</label>
+        <type>AutoNumber</type>
+    </nameField>
+    <pluralLabel>Process Requests</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Request_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Process_Type__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Required_Date__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>General_Time_Frame_Due__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Request_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Process_Type__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Required_Date__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>General_Time_Frame_Due__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Request_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Process_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Required_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>General_Time_Frame_Due__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>RequiredDateValidation</fullName>
+        <active>true</active>
+        <description>Checks that either a required date or time frame are enteerd - depending on state of request.</description>
+        <errorConditionFormula>ISBLANK(Required_Date__c)  &amp;&amp;    ISBLANK(General_Time_Frame_Due__c)</errorConditionFormula>
+        <errorDisplayField>Required_Date__c</errorDisplayField>
+        <errorMessage>A required date OR general time frame due is required.</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Accept_Request</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Accept Request</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/15.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/apex.js&quot;)} 
+
+//alert (&quot;id {!SW_Process_Request__c.Name}&quot;); 
+var result = sforce.apex.execute( 
+&quot;SWProcessRequestHelper&quot;, // class 
+&quot;updateTask&quot;, // method 
+{vSubject:&quot;Accept Complete Request Submission&quot;, 
+vName : &quot;{!SW_Process_Request__c.Name}&quot; , 
+vId : &quot;{!SW_Process_Request__c.Id}&quot; // method arguments 
+} 
+); 
+
+
+var result = sforce.apex.execute( 
+&quot;SWProcessRequestHelper&quot;, // class 
+&quot;updateStatus&quot;, // method 
+{vStatus:&quot;Request - Accepted&quot;, 
+vName : &quot;{!SW_Process_Request__c.Name}&quot; 
+} 
+); 
+
+
+window.location.reload();</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Acknowledge_Initial_Request</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Acknowledge Initial Request</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/15.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/apex.js&quot;)}
+
+//alert (&quot;id {!SW_Process_Request__c.Name}&quot;); 
+var result = sforce.apex.execute(
+    &quot;SWProcessRequestHelper&quot;,       // class  
+    &quot;updateTask&quot;,          // method  
+    {vSubject:&quot;Acknowledge Initial Request Submission&quot;,
+     vName : &quot;{!SW_Process_Request__c.Name}&quot;   ,
+   vId : &quot;{!SW_Process_Request__c.Id}&quot; // method arguments 
+     }
+);
+
+
+var result = sforce.apex.execute( 
+&quot;SWProcessRequestHelper&quot;, // class 
+&quot;updateStatus&quot;, // method 
+{vStatus:&quot;Initial Request - Acknowledged&quot;, 
+vName : &quot;{!SW_Process_Request__c.Name}&quot; 
+}
+);
+
+
+window.location.reload();</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Lock_Request</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Lock Request</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/15.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/apex.js&quot;)} 
+
+//alert (&quot;id {!SW_Process_Request__c.Name}&quot;); 
+var result = sforce.apex.execute( 
+&quot;SWProcessRequestHelper&quot;, // class 
+&quot;updateTask&quot;, // method 
+{vSubject:&quot;Lock Process Request&quot;, 
+vName : &quot;{!SW_Process_Request__c.Name}&quot; , 
+vId : &quot;{!SW_Process_Request__c.Id}&quot; // method arguments 
+} 
+); 
+
+
+var result = sforce.apex.execute( 
+&quot;SWProcessRequestHelper&quot;, // class 
+&quot;updateStatus&quot;, // method 
+{vStatus:&quot;Request - Locked&quot;, 
+vName : &quot;{!SW_Process_Request__c.Name}&quot; 
+} 
+); 
+
+
+window.location.reload();</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Mark_As_Complete</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Mark As Complete</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/15.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/apex.js&quot;)} 
+
+//alert (&quot;id {!SW_Process_Request__c.Name}&quot;); 
+var result = sforce.apex.execute( 
+&quot;SWProcessRequestHelper&quot;, // class 
+&quot;updateTask&quot;, // method 
+{vSubject:&quot;Mark As Complete&quot;, 
+vName : &quot;{!SW_Process_Request__c.Name}&quot; , 
+vId : &quot;{!SW_Process_Request__c.Id}&quot; // method arguments 
+} 
+); 
+
+
+var result = sforce.apex.execute( 
+&quot;SWProcessRequestHelper&quot;, // class 
+&quot;updateStatus&quot;, // method 
+{vStatus:&quot;Request - Completed&quot;, 
+vName : &quot;{!SW_Process_Request__c.Name}&quot; 
+} 
+); 
+
+
+window.location.reload();</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Schedule_Request</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Schedule Request</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/15.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/apex.js&quot;)} 
+
+//alert (&quot;id {!SW_Process_Request__c.Name}&quot;); 
+var result = sforce.apex.execute( 
+&quot;SWProcessRequestHelper&quot;, // class 
+&quot;updateTask&quot;, // method 
+{vSubject:&quot;Schedule Process Request&quot;, 
+vName : &quot;{!SW_Process_Request__c.Name}&quot; , 
+vId : &quot;{!SW_Process_Request__c.Id}&quot; // method arguments 
+} 
+); 
+
+
+var result = sforce.apex.execute( 
+&quot;SWProcessRequestHelper&quot;, // class 
+&quot;updateStatus&quot;, // method 
+{vStatus:&quot;Request - Scheduled&quot;, 
+vName : &quot;{!SW_Process_Request__c.Name}&quot; 
+} 
+); 
+
+
+window.location.reload();</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Submit_Complete_Request</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Submit Complete Request</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/15.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/apex.js&quot;)} 
+
+
+var result = sforce.apex.execute( 
+&quot;SWProcessRequestHelper&quot;, // class 
+&quot;updateStatus&quot;, // method 
+{vStatus:&quot;Complete Request - Submitted&quot;, 
+vName : &quot;{!SW_Process_Request__c.Name}&quot; 
+// method arguments 
+} 
+); 
+
+var result = sforce.apex.execute( 
+&quot;SWProcessRequestHelper&quot;, // class 
+&quot;updateTask&quot;, // method 
+{vSubject:&quot;Complete Request Submission&quot;, 
+vName : &quot;{!SW_Process_Request__c.Name}&quot; , 
+vId : &quot;{!SW_Process_Request__c.Id}&quot; // method arguments 
+} 
+);
+
+
+window.location.reload();</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Submit_Initial_Request</fullName>
+        <availability>online</availability>
+        <description>This button submits an &apos;initial request&apos; to notify Chadwicks. A &apos;full request&apos; must be submitted to schedule the request.</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Submit Initial Request</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/15.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/14.0/apex.js&quot;)}
+
+
+var result = sforce.apex.execute(
+    &quot;SWProcessRequestHelper&quot;,       // class  
+    &quot;updateStatus&quot;,          // method  
+    {vStatus:&quot;Initial Request - Submitted&quot;,
+     vName : &quot;{!SW_Process_Request__c.Name}&quot;
+// method arguments  
+     }
+);
+
+var result = sforce.apex.execute( 
+&quot;SWProcessRequestHelper&quot;, // class 
+&quot;updateTask&quot;, // method 
+{vSubject:&quot;Submit Initial Request&quot;, 
+vName : &quot;{!SW_Process_Request__c.Name}&quot; , 
+vId : &quot;{!SW_Process_Request__c.Id}&quot; // method arguments 
+} 
+); 
+
+
+window.location.reload();</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Update_Materials_List</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>page</linkType>
+        <masterLabel>Update Materials List</masterLabel>
+        <openType>replace</openType>
+        <page>SW_Update_Process_Materials</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

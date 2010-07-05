@@ -1,0 +1,42 @@
+<apex:page standardController="SW_Process_Request__c" extensions="SWProcessingMaterialEntry">
+    <apex:form >
+    <apex:pageBlock title="Process Request - Materials" >
+            <apex:pageBlockButtons >
+                <apex:commandButton value="Save" action="{!save}" rerender="error" />
+            </apex:pageBlockButtons>
+            <apex:pageBlockTable value="{!materials}" var="m" id="table">
+                <apex:column headerValue="Group">
+                    <apex:inputField value="{!m.Group__c}"/>
+                </apex:column>                
+                <apex:column headerValue="Lot Number">
+                    <apex:inputField value="{!m.Lot_Number__c}"/>
+                </apex:column>
+                <apex:column headerValue="Kilos">
+                    <apex:inputField value="{!m.Kilos__c}"/>
+                </apex:column>
+                <apex:column headerValue="Wool Description">
+                    <apex:inputField value="{!m.Wool_Description__c}"/>
+                </apex:column>
+                <apex:column headerValue="Lying">
+                    <apex:inputField value="{!m.Lying__c}"/>
+                </apex:column>
+                <apex:column headerValue="Number Of Bales">
+                    <apex:inputField value="{!m.Number_of_Bales__c}"/>
+                </apex:column>
+                <apex:column headerValue="Blow">
+                    <apex:inputField value="{!m.Blow__c}"/>
+                </apex:column>
+                <apex:column headerValue="Wash In">
+                    <apex:inputField value="{!m.Wash_In__c}"/>
+                </apex:column>
+            </apex:pageBlockTable>
+    <apex:pageblockButtons location="bottom">
+        <div style="text-align:right;margin-right:30px;font-wei​ght:bold;">
+            <apex:commandLink value="Add Row" action="{!addRow}" rerender="table,error" immediate="true" />
+&nbsp;|&nbsp;&nbsp;
+            <apex:commandLink value="Remove Row" action="{!removeRow}" rerender="table,error" immediate="true" />                
+        </div>
+    </apex:pageblockButtons>  
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

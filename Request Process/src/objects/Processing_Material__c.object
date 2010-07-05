@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <enableActivities>true</enableActivities>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Blow__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Blow</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Group__c</fullName>
+        <label>Group</label>
+        <length>3</length>
+        <required>true</required>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Kilos__c</fullName>
+        <label>Kilos</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>3</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Lot_Number__c</fullName>
+        <label>Lot Number</label>
+        <length>20</length>
+        <required>true</required>
+        <type>Text</type>
+    </fields>
+    <fields>
+        <fullName>Lying__c</fullName>
+        <label>Lying</label>
+        <picklist>
+            <picklistValues>
+                <fullName>TC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OAK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BWOAK</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>BWEVA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Number_of_Bales__c</fullName>
+        <label>Number of Bales</label>
+        <precision>3</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <type>Number</type>
+    </fields>
+    <fields>
+        <fullName>Process_Request__c</fullName>
+        <label>Process Request</label>
+        <referenceTo>SW_Process_Request__c</referenceTo>
+        <relationshipLabel>Processing Materials</relationshipLabel>
+        <relationshipName>Processing_Materials</relationshipName>
+        <relationshipOrder>0</relationshipOrder>
+        <type>MasterDetail</type>
+    </fields>
+    <fields>
+        <fullName>Wash_In__c</fullName>
+        <defaultValue>false</defaultValue>
+        <label>Wash In</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Wool_Description__c</fullName>
+        <label>Wool Description</label>
+        <picklist>
+            <picklistValues>
+                <fullName>B/F LOCKS</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DARK HERD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GREASY BLACK/GREY SCOTCH</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GREY TAIL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SCOUROUT</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SWALE GREY</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Wool_Type_del__c</fullName>
+        <label>Wool Type</label>
+        <referenceTo>Wool_Type__c</referenceTo>
+        <relationshipLabel>Processing Materials</relationshipLabel>
+        <relationshipName>Processing_Materials</relationshipName>
+        <type>Lookup</type>
+    </fields>
+    <label>Processing Material</label>
+    <nameField>
+        <label>Processing Material Name</label>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Processing Materials</pluralLabel>
+    <searchLayouts>
+        <excludedStandardButtons>New</excludedStandardButtons>
+        <excludedStandardButtons>Accept</excludedStandardButtons>
+        <excludedStandardButtons>ChangeOwner</excludedStandardButtons>
+    </searchLayouts>
+    <sharingModel>ControlledByParent</sharingModel>
+</CustomObject>
